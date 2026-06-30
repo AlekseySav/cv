@@ -1,0 +1,88 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\definecolor{accent}{HTML}{1A4FC4}
+\hypersetup{colorlinks, urlcolor=accent}
+
+\titleformat{\section}{\normalsize\bfseries}{}{0em}{\MakeUppercase}[\vspace{-4pt}\rule{\linewidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+\setlist[itemize]{noitemsep, topsep=2pt, parsep=0pt, leftmargin=*}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+%% Header
+
+\begin{center}
+{\huge\bfseries {{ header.name }}}\\[4pt]
+{% for c in header.contacts -%}
+	{% for label, value in c.items() -%}
+		\href{ {{- value -}} }{ {{- label -}} }
+	{% endfor -%}
+	{% if not loop.last -%}
+		$\cdot$
+	{% endif -%}
+{% endfor %}
+\end{center}
+
+\vspace{6pt}
+
+%% summary
+
+{{ header.summary | trim }}
+
+%% Sections
+
+{% for section in sections %}
+	{% for name, items in section.items() %}
+		\section{ {{- name -}} }
+		{% for item in items %}
+			{% if 'url' in item -%}
+				\noindent\textbf{\href{ {{- item.url -}} }{ {{- item.title -}} }}%
+			{% else -%}
+				\noindent\textbf{ {{- item.title -}} }%
+			{% endif -%}
+
+			{% if 'hint' in item -%}
+				\hfill\textit{ {{ item.hint | join(' $\\cdot$') }} } \\
+			{% endif -%}
+
+			{% if 'brief' in item -%}
+				\textit{ {{ item.brief | join(' $\\cdot$') }} }
+			{% endif -%}
+
+			{% if 'hint' not in item and 'brief' not in item -%}
+				\textbf{:}
+			{% endif -%}
+
+			{% if 'description' in item -%}
+				{% if item.description is string -%}
+					{{ item.description }}\par
+				{% else -%}
+					\begin{itemize}
+					{% for p in item.description -%}
+						\item {{ p }}
+					{% endfor -%}
+					\end{itemize}
+				{% endif -%}
+			{% endif -%}
+
+			{% if not loop.last -%}
+				\vspace{4pt}
+			{% endif -%}
+		{% endfor %}
+	{% endfor %}
+{% endfor %}
+
+\end{document}

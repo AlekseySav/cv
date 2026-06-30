@@ -1,0 +1,38 @@
+name: Build CV
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-lang-cyrillic \
+            texlive-fonts-recommended
+
+      - name: Install tools
+        run: pip install jinja2-cli check-jsonschema
+
+      - name: Generate PDFs
+        run: |
+          chmod +x tools/generate
+          for yaml in data/cv.*.yaml; do
+            tools/generate "$yaml"
+          done
+
+      - name: Publish PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv
+          path: build/*.pdf

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+cv="${1:?Usage: generate <yaml-file>}"
+cv_abs="$(cd "$(dirname "$cv")" && pwd)/$(basename "$cv")"
+stem="$(basename "$cv" .yaml)"
+
+BUILD="$REPO_ROOT/build"
+mkdir -p "$BUILD"
+
+echo "Validating $cv..."
+check-jsonschema --schemafile "$REPO_ROOT/data/cv.schema.json" "$cv_abs"
+
+echo "Rendering $stem.tex..."
+jinja2 "$REPO_ROOT/data/cv.tex.jinja" "$cv_abs" > "$BUILD/$stem.tex"
+
+echo "Compiling PDF..."
+pdflatex -interaction=nonstopmode -output-directory "$BUILD" "$BUILD/$stem.tex" \
+    > "$BUILD/$stem.log" 2>&1 || { cat "$BUILD/$stem.log"; exit 1; }
+
+echo "Done: $BUILD/$stem.pdf"

@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["header", "sections"],
+  "definitions": {
+    "plaintext": {
+      "type": "string",
+      "pattern": "^([-a-zA-ZЀ-ӿ0-9 .,;:!?'\"()/+@–—\\\\]|\\\\[%~])*$"
+    },
+    "entry": {
+      "type": "object",
+      "required": ["title"],
+      "properties": {
+        "title":       { "$ref": "#/definitions/plaintext" },
+        "brief": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/plaintext" }
+        },
+        "hint": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/plaintext" }
+        },
+        "description": {
+          "oneOf": [
+            { "$ref": "#/definitions/plaintext" },
+            { "type": "array", "items": { "$ref": "#/definitions/plaintext" } }
+          ]
+        },
+        "url": { "$ref": "#/definitions/plaintext" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "header": {
+      "type": "object",
+      "required": ["name", "summary"],
+      "properties": {
+        "name":     { "$ref": "#/definitions/plaintext" },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "minProperties": 1,
+            "maxProperties": 1,
+            "additionalProperties": { "$ref": "#/definitions/plaintext" }
+          }
+        },
+        "summary":  { "$ref": "#/definitions/plaintext" }
+      },
+      "additionalProperties": false
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "minProperties": 1,
+        "maxProperties": 1,
+        "propertyNames": { "pattern": "^[a-z]+$" },
+        "additionalProperties": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/entry" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
