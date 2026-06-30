@@ -1,0 +1,105 @@
+header:
+  name: "Alexey Savinov"
+
+  contacts:
+    - Email: "mailto:schet.v.komplax@gmail.com"
+    - Telegram: "https://t.me/divanlitva"
+    - LinkedIn: "https://www.linkedin.com/in/alexey-savinov-dev"
+    - GitHub: "https://github.com/AlekseySav"
+
+  summary: >-
+    Backend-разработчик с опытом разработки высоконагруженных систем -- поисковых индексаторов в Яндексе
+    и мобильного ядра сети 3GPP в Telcore. Преимущественно C++, Go, Rust.
+
+sections:
+  - навыки:
+    - title: "Languages"
+      description: "C++, Go, Rust, Python, Lua, SQL, x86 Assembly"
+    - title: "Infrastructure"
+      description: "Docker, Linux, CI/CD, Grafana, Prometheus, Protobuf"
+    - title: "Tools"
+      description: "git, CMake, Make, Ninja, GDB, GTest, Valgrind, perf, Bash, Conan, Vim, Neovim, tmux"
+    - title: "Concepts"
+      description: "Distributed systems, search/indexing, network programming, observability, databases"
+    - title: "Protocols"
+      description: "3GPP, gRPC, REST, gNMI, SNMP"
+    - title: "English"
+      description: "B2/C1"
+
+  - опыт работы:
+    - title: "Старший разработчик"
+      brief:
+        - "Telcore"
+        - "Full-time"
+        - "Санкт-Петербург, Россия (Remote)"
+      hint:
+        - "Nov 2024 -- Jun 2026"
+      description:
+        - "Отлаживал legacy PGW/SGW кодбазу (1M+ строк), сократив количество segfault на 15\\%"
+        - "Tech lead сервиса конфигурирования NE (gNMI/REST) -- расширяемый дизайн поддерживает 20+ вариантов узлов, подключение новой версии менее чем за день"
+        - "Менторил 3 инженеров; разработал единую абстракцию конфигурирования над неконсистентными legacy-интерфейсами NE"
+        - "Стек: 3GPP, Docker, Grafana, Prometheus, SNMP, gNMI, REST, Conan"
+
+    - title: "Ассистент преподавателя"
+      brief:
+        - "MIPT"
+        - "Part-time"
+        - "Москва, Россия (Hybrid)"
+      hint:
+        - "Sep 2024 -- Jun 2025"
+      description:
+        - "Проверял задания и проводил консультации по курсам Go и C++ для 320 студентов"
+
+    - title: "Разработчик"
+      brief:
+        - "Yandex Market"
+        - "Full-time"
+        - "Москва, Россия (Hybrid)"
+      hint:
+        - "Jan 2024 -- Nov 2024"
+      description:
+        - "Разработал CI/CD пайплайны релиза для 50+ сервисов"
+        - "Восстановил данные метрик commit-to-prod за 6 месяцев -- основной KPI devexp"
+        - "Внедрил Go в Python-only CI команду -- открыл путь к переходу команды на современный стек"
+        - "Стек: Go, Python, SQL, CI/CD"
+
+    - title: "Разработчик"
+      brief:
+        - "Yandex Infrastructure"
+        - "Full-time"
+        - "Москва, Россия (Hybrid)"
+      hint:
+        - "Jun 2023 -- Jan 2024"
+      description:
+        - "Реализовал динамическое шардирование в поисковом индексаторе Яндекса, сократив время обновления индекса на 60--80\\%; обеспечил внедрение в наиболее нагруженных системах"
+        - "Стек: C++, Python, Protobuf"
+
+  - образование:
+    - title: "Московский физико-технический институт (МФТИ)"
+      brief:
+        - "Магистратура, компьютерные науки"
+        - "Москва, Россия"
+      hint:
+        - "Sep 2025 -- Aug 2027"
+
+    - title: "Московский физико-технический институт (МФТИ)"
+      brief:
+        - "Бакалавр, прикладная математика и информатика"
+        - "Москва, Россия"
+      hint:
+        - "Sep 2021 -- Aug 2025"
+
+  - проекты:
+    - title: "Tiramisu"
+      description: >-
+        TUI-инструмент для управления сессиями tmux с fuzzy-поиском и обнаружением проектов по glob-паттернам.
+        Написан на Rust. Доступен в Homebrew.
+      url: "https://github.com/AlekseySav/tiramisu"
+
+    - title: "Ras"
+      description: >-
+        x86-ассемблер, написанный с нуля на C++.
+        В 4 раза быстрее NASM; генерирует более оптимальный машинный код, чем FASM/GAS,
+        за счёт собственного оптимизатора кодирования инструкций.
+        Использован для создания собственного ядра ОС на x86.
+      url: "https://github.com/AlekseySav/ras"

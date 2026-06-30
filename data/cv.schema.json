@@ -56,7 +56,7 @@
         "type": "object",
         "minProperties": 1,
         "maxProperties": 1,
-        "propertyNames": { "pattern": "^[a-z]+$" },
+        "propertyNames": { "pattern": "^[a-zA-ZЀ-ӿ ]+$" },
         "additionalProperties": {
           "type": "array",
           "items": { "$ref": "#/definitions/entry" }

@@ -8,19 +8,23 @@ header:
     - GitHub: "https://github.com/AlekseySav"
 
   summary: >-
-    Software engineer with a focus on backend systems, infrastructure, and
-    performance-critical code. I've worked on distributed search infrastructure,
-    internal platform stability, and telecom protocol implementation. I write
-    mostly C++, Go and Rust.
+    Backend engineer with a track record in high-throughput systems -- search indexers at Yandex
+    and 3GPP mobile core at Telcore. Primarily C++, Go, Rust.
 
 sections:
   - skills:
     - title: "Languages"
-      description: "C++, Go, Rust, Python"
+      description: "C++, Go, Rust, Python, Lua, SQL, x86 Assembly"
     - title: "Infrastructure"
-      description: "Docker, Grafana, Prometheus, gNMI, SNMP"
+      description: "Docker, Linux, CI/CD, Grafana, Prometheus, Protobuf"
+    - title: "Tools"
+      description: "git, CMake, Make, Ninja, GDB, GTest, Valgrind, perf, Bash, Conan, Vim, Neovim, tmux"
+    - title: "Concepts"
+      description: "Distributed systems, search/indexing, network programming, observability, databases"
     - title: "Protocols"
-      description: "3GPP, PFCP, gRPC, REST"
+      description: "3GPP, gRPC, REST, gNMI, SNMP"
+    - title: "Spoken"
+      description: "English (B2/C1), Russian (native)"
 
   - experience:
     - title: "Senior Software Engineer"
@@ -31,10 +35,10 @@ sections:
       hint:
         - "Nov 2024 -- Jun 2026"
       description:
-        - "Developed PGW and SGW modules for 3GPP-compliant mobile core network"
-        - "Implemented PFCP algorithms; set up performance observability stack; implemented node configuration via SNMP"
-        - "Tech lead for network element configuration service (PGW/SGW) via gNMI and REST API"
-        - "Stack: 3GPP, PFCP, Docker, Grafana, Prometheus, cAdvisor, SNMP, gNMI, REST"
+        - "Debugged legacy PGW/SGW codebase (1M+ LOC), reducing segfaults by 15\\%"
+        - "Tech lead for NE configuration service (gNMI/REST) — extensible design supporting 20+ node variants, new version onboarding under 1 day"
+        - "Mentored 3 engineers; led design of unified configuration abstraction over legacy, inconsistent NE interfaces"
+        - "Stack: 3GPP, Docker, Grafana, Prometheus, SNMP, gNMI, REST, Conan"
 
     - title: "Teaching Assistant"
       brief:
@@ -44,9 +48,7 @@ sections:
       hint:
         - "Sep 2024 -- Jun 2025"
       description:
-        - "Reviewed and graded assignments for Go and C++ courses; provided technical feedback"
-        - "Supported students in debugging, code quality, and language concepts during office hours"
-        - "Stack: Go, C++"
+        - "Graded assignments and held office hours for Go and C++ courses across 320 students"
 
     - title: "Software Engineer"
       brief:
@@ -54,12 +56,12 @@ sections:
         - "Full-time"
         - "Moscow, Russia (Hybrid)"
       hint:
-        - "Apr 2024 -- Nov 2024"
+        - "Jan 2024 -- Nov 2024"
       description:
-        - "Part of team owning internal infrastructure stability and developer experience across engineering org"
-        - "Built CI/CD pipelines for releases of 50+ services; debugged critical issues in a 500K+ LOC codebase; recovered and reconciled lost production database records"
-        - "Championed adoption of new technologies, including leading migration of one service to Go"
-        - "Stack: Go, Python"
+        - "Built CI/CD release pipelines for 50+ services"
+        - "Recovered 6 months of lost commit-to-prod metrics -- primary devexp KPI"
+        - "Pioneered Go adoption in a Python-only CI team -- unblocked team-wide shift to faster, modern stack"
+        - "Stack: Go, Python, SQL, CI/CD"
 
     - title: "Software Engineer"
       brief:
@@ -67,11 +69,10 @@ sections:
         - "Full-time"
         - "Moscow, Russia (Hybrid)"
       hint:
-        - "Jun 2023 -- Apr 2024"
+        - "Jun 2023 -- Jan 2024"
       description:
-        - "Contributed to development of a new indexer -- an external key-value store powering search algorithms"
-        - "Implemented dynamic sharding for indexer tables, reducing index update time by 60–80\\%, unlocking adoption in the company's highest-traffic systems"
-        - "Stack: C++"
+        - "Implemented dynamic sharding in Yandex search indexer, cutting index update time by 60–80\\%; enabled adoption in highest-traffic systems"
+        - "Stack: C++, Python, Protobuf"
 
   - education:
     - title: "Moscow Institute of Physics and Technology (MIPT)"
@@ -92,8 +93,7 @@ sections:
     - title: "Tiramisu"
       description: >-
         TUI tool for tmux session management with fuzzy search and glob-pattern project discovery.
-        Written in Rust.
-        Available on Homebrew.
+        Written in Rust. Available on Homebrew.
       url: "https://github.com/AlekseySav/tiramisu"
 
     - title: "Ras"
@@ -101,5 +101,5 @@ sections:
         x86 assembler written from scratch in C++.
         4x faster than NASM; produces more optimal machine code than FASM/GAS via custom instruction encoding optimizer.
         Output validated against NASM via automated test suite.
-        Used to build a toy x86 OS kernel.
+        Used to build a custom x86 OS kernel.
       url: "https://github.com/AlekseySav/ras"
