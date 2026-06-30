@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,8 +34,15 @@ jobs:
             tools/generate "$yaml"
           done
 
-      - name: Publish PDFs
-        uses: actions/upload-artifact@v4
+      - name: Update latest tag
+        run: |
+          git tag -f latest HEAD
+          git push origin -f refs/tags/latest
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
         with:
-          name: cv
-          path: build/*.pdf
+          tag_name: latest
+          name: Latest CV
+          files: build/*.pdf
+          make_latest: true
