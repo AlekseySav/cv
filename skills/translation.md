@@ -18,4 +18,4 @@
 
 ## prefer:
 - intuitive word-use over direct one-to-one translation
-- terms over regular words (e.g. неконсистентный is better than несогласованный, кодбаза is better than кодовая база, fuzzy-поиск is better than нечёткий поиск)
+- terms over regular words (e.g. неконсистентный is better than несогласованный, fuzzy-поиск is better than нечёткий поиск)
