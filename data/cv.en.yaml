@@ -37,7 +37,7 @@ sections:
         - "Nov 2024 -- Present"
       description:
         - "Hardened legacy PGW/SGW codebase (1M+ LOC), resolving 10+ segfault incidents"
-        - "Tech lead for NE configuration service (gNMI/REST); designed DSL mapping SNMP variables to YANG models, cutting new node-variant onboarding from a week to under a day across 20+ variants"
+        - "Tech lead for NE configuration service (gNMI/REST) supporting 20+ node versions across PGW/SGW/MME; designed DSL for SNMP-to-YANG mapping, cutting new-version onboarding from a week to under a day"
         - "Mentored 3 engineers on NE configuration service design and delivery"
         - "Stack: 3GPP, Docker, Grafana, Prometheus, SNMP, gNMI, REST, Conan"
 
