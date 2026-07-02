@@ -36,7 +36,7 @@ sections:
       hint:
         - "Nov 2024 -- Present"
       description:
-        - "Стабилизировал legacy PGW/SGW (1M+ строк), сократив segfault на 15\\%"
+        - "Стабилизировал legacy PGW/SGW (1M+ строк), устранив 10+ segfault-инцидентов"
         - "Tech lead сервиса конфигурирования NE (gNMI/REST); разработал DSL маппинга SNMP-переменных в YANG-модели, сократив онбординг новых узлов с недели до дня (20+ вариантов)"
         - "Менторил 3 разработчиков при создании и запуске сервиса конфигурирования NE"
         - "Стек: 3GPP, Docker, Grafana, Prometheus, SNMP, gNMI, REST, Conan"

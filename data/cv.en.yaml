@@ -36,7 +36,7 @@ sections:
       hint:
         - "Nov 2024 -- Present"
       description:
-        - "Hardened legacy PGW/SGW codebase (1M+ LOC), reducing segfaults by 15\\%"
+        - "Hardened legacy PGW/SGW codebase (1M+ LOC), resolving 10+ segfault incidents"
         - "Tech lead for NE configuration service (gNMI/REST); designed DSL mapping SNMP variables to YANG models, cutting new node-variant onboarding from a week to under a day across 20+ variants"
         - "Mentored 3 engineers on NE configuration service design and delivery"
         - "Stack: 3GPP, Docker, Grafana, Prometheus, SNMP, gNMI, REST, Conan"
