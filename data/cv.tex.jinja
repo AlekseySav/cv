@@ -22,10 +22,21 @@
 
 \begin{document}
 
+{% macro linkify(text, urls) -%}
+	{%- set ns = namespace(t=text) -%}
+	{%- for label, href in urls.items() -%}
+		{%- set ns.t = ns.t.replace(label, '\\href{' ~ href ~ '}{' ~ label ~ '}') -%}
+	{%- endfor -%}
+	{{- ns.t -}}
+{%- endmacro %}
+
 %% Header
 
 \begin{center}
-{\huge\bfseries {{ header.name }}}\\[4pt]
+{\huge\bfseries {{ header.name }}}\\[2pt]
+{% if 'title' in header -%}
+{\large {{ header.title }}}\\[4pt]
+{% endif -%}
 {% for c in header.contacts -%}
 	{% for label, value in c.items() -%}
 		\href{ {{- value -}} }{ {{- label -}} }
@@ -49,7 +60,7 @@
 		\section{ {{- name -}} }
 		{% for item in items %}
 			{% if 'url' in item -%}
-				\noindent\textbf{\href{ {{- item.url -}} }{ {{- item.title -}} }}%
+				\noindent\textbf{ {{- linkify(item.title, item.url) -}} }%
 			{% else -%}
 				\noindent\textbf{ {{- item.title -}} }%
 			{% endif -%}
@@ -68,11 +79,19 @@
 
 			{% if 'description' in item -%}
 				{% if item.description is string -%}
-					{{ item.description }}\par
+					{% if 'url' in item -%}
+						{{ linkify(item.description, item.url) }}\par
+					{% else -%}
+						{{ item.description }}\par
+					{% endif -%}
 				{% else -%}
 					\begin{itemize}
 					{% for p in item.description -%}
-						\item {{ p }}
+						{% if 'url' in item -%}
+							\item {{ linkify(p, item.url) }}
+						{% else -%}
+							\item {{ p }}
+						{% endif -%}
 					{% endfor -%}
 					\end{itemize}
 				{% endif -%}

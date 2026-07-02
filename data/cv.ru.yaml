@@ -1,5 +1,6 @@
 header:
-  name: "Alexey Savinov"
+  name: "Алексей Савинов"
+  title: "Backend разработчик"
 
   contacts:
     - Email: "mailto:schet.v.komplax@gmail.com"
@@ -8,19 +9,19 @@ header:
     - GitHub: "https://github.com/AlekseySav"
 
   summary: >-
-    Backend-разработчик с опытом разработки высоконагруженных систем -- поисковых индексаторов в Яндексе
-    и мобильного ядра сети 3GPP в Telcore. Преимущественно C++, Go, Rust.
+    Backend-разработчик, 3+ года разработки высоконагруженных систем -- поисковых
+    индексаторов в Яндексе и мобильного ядра сети 3GPP в Telcore. C++, Go, Rust.
 
 sections:
   - навыки:
     - title: "Languages"
       description: "C++, Go, Rust, Python, Lua, SQL, x86 Assembly"
-    - title: "Infrastructure"
-      description: "Docker, Linux, CI/CD, Grafana, Prometheus, Protobuf"
+    - title: "Infra"
+      description: "Docker, Kubernetes, Linux, CI/CD, Grafana, Prometheus, Protobuf, PostgreSQL, Redis, Kafka"
     - title: "Tools"
       description: "git, CMake, Make, Ninja, GDB, GTest, Valgrind, perf, Bash, Conan, Vim, Neovim, tmux"
     - title: "Concepts"
-      description: "Distributed systems, search/indexing, network programming, observability, databases"
+      description: "Distributed systems, microservices, indexing, network programming, observability, Agile/Scrum"
     - title: "Protocols"
       description: "3GPP, gRPC, REST, gNMI, SNMP"
     - title: "English"
@@ -33,11 +34,11 @@ sections:
         - "Full-time"
         - "Санкт-Петербург, Россия (Remote)"
       hint:
-        - "Nov 2024 -- Jun 2026"
+        - "Nov 2024 -- Present"
       description:
-        - "Отлаживал legacy PGW/SGW кодбазу (1M+ строк), сократив количество segfault на 15\\%"
-        - "Tech lead сервиса конфигурирования NE (gNMI/REST) -- расширяемый дизайн поддерживает 20+ вариантов узлов, подключение новой версии менее чем за день"
-        - "Менторил 3 инженеров; разработал единую абстракцию конфигурирования над неконсистентными legacy-интерфейсами NE"
+        - "Стабилизировал legacy PGW/SGW (1M+ строк), сократив segfault на 15\\%"
+        - "Tech lead сервиса конфигурирования NE (gNMI/REST); разработал DSL маппинга SNMP-переменных в YANG-модели, сократив онбординг новых узлов с недели до дня (20+ вариантов)"
+        - "Менторил 3 разработчиков при создании и запуске сервиса конфигурирования NE"
         - "Стек: 3GPP, Docker, Grafana, Prometheus, SNMP, gNMI, REST, Conan"
 
     - title: "Ассистент преподавателя"
@@ -48,7 +49,7 @@ sections:
       hint:
         - "Sep 2024 -- Jun 2025"
       description:
-        - "Проверял задания и проводил консультации по курсам Go и C++ для 320 студентов"
+        - "Разрабатывал задания, проверял работы и консультировал по курсам Go и C++ для 320 студентов"
 
     - title: "Разработчик"
       brief:
@@ -59,7 +60,7 @@ sections:
         - "Jan 2024 -- Nov 2024"
       description:
         - "Разработал CI/CD пайплайны релиза для 50+ сервисов"
-        - "Восстановил данные метрик commit-to-prod за 6 месяцев -- основной KPI devexp"
+        - "Восстановил 6 месяцев отсутствовавших данных lead-time -- основной devexp KPI"
         - "Внедрил Go в Python-only CI команду -- открыл путь к переходу команды на современный стек"
         - "Стек: Go, Python, SQL, CI/CD"
 
@@ -93,13 +94,16 @@ sections:
     - title: "Tiramisu"
       description: >-
         TUI-инструмент для управления сессиями tmux с fuzzy-поиском и обнаружением проектов по glob-паттернам.
-        Написан на Rust. Доступен в Homebrew.
-      url: "https://github.com/AlekseySav/tiramisu"
+        Написан на Rust; доступен в Homebrew.
+      url:
+        Tiramisu: "https://github.com/AlekseySav/tiramisu"
+        Homebrew: "https://github.com/AlekseySav/homebrew-tiramisu"
 
     - title: "Ras"
       description: >-
-        x86-ассемблер, написанный с нуля на C++.
-        В 4 раза быстрее NASM; генерирует более оптимальный машинный код, чем FASM/GAS,
-        за счёт собственного оптимизатора кодирования инструкций.
-        Использован для создания собственного ядра ОС на x86.
-      url: "https://github.com/AlekseySav/ras"
+        Разработал x86-ассемблер на C++: 4x быстрее NASM, оптимальнее FASM/GAS благодаря
+        custom-оптимизатору кодирования инструкций; протестирован против NASM; использован для
+        загрузки собственного ядра ОС.
+      url:
+        Ras: "https://github.com/AlekseySav/ras"
+        "ядра ОС": "https://github.com/AlekseySav/mu/tree/v2"

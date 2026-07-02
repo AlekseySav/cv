@@ -26,7 +26,11 @@
             { "type": "array", "items": { "$ref": "#/definitions/plaintext" } }
           ]
         },
-        "url": { "$ref": "#/definitions/plaintext" }
+        "url": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": { "$ref": "#/definitions/plaintext" }
+        }
       },
       "additionalProperties": false
     }
@@ -37,6 +41,7 @@
       "required": ["name", "summary"],
       "properties": {
         "name":     { "$ref": "#/definitions/plaintext" },
+        "title":    { "$ref": "#/definitions/plaintext" },
         "contacts": {
           "type": "array",
           "items": {

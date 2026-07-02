@@ -1,5 +1,6 @@
 header:
   name: "Alexey Savinov"
+  title: "Software Engineer"
 
   contacts:
     - Email: "mailto:schet.v.komplax@gmail.com"
@@ -8,19 +9,19 @@ header:
     - GitHub: "https://github.com/AlekseySav"
 
   summary: >-
-    Backend engineer with a track record in high-throughput systems -- search indexers at Yandex
-    and 3GPP mobile core at Telcore. Primarily C++, Go, Rust.
+    Backend engineer, 3+ years building high-throughput systems -- search indexers at Yandex,
+    3GPP mobile core at Telcore. C++, Go, Rust.
 
 sections:
   - skills:
     - title: "Languages"
       description: "C++, Go, Rust, Python, Lua, SQL, x86 Assembly"
-    - title: "Infrastructure"
-      description: "Docker, Linux, CI/CD, Grafana, Prometheus, Protobuf"
+    - title: "Infra"
+      description: "Docker, Kubernetes, Linux, CI/CD, Grafana, Prometheus, Protobuf, PostgreSQL, Redis, Kafka"
     - title: "Tools"
       description: "git, CMake, Make, Ninja, GDB, GTest, Valgrind, perf, Bash, Conan, Vim, Neovim, tmux"
     - title: "Concepts"
-      description: "Distributed systems, search/indexing, network programming, observability, databases"
+      description: "Distributed systems, microservices, indexing, network programming, observability, Agile/Scrum"
     - title: "Protocols"
       description: "3GPP, gRPC, REST, gNMI, SNMP"
     - title: "Spoken"
@@ -33,11 +34,11 @@ sections:
         - "Full-time"
         - "St Petersburg, Russia (Remote)"
       hint:
-        - "Nov 2024 -- Jun 2026"
+        - "Nov 2024 -- Present"
       description:
-        - "Debugged legacy PGW/SGW codebase (1M+ LOC), reducing segfaults by 15\\%"
-        - "Tech lead for NE configuration service (gNMI/REST) — extensible design supporting 20+ node variants, new version onboarding under 1 day"
-        - "Mentored 3 engineers; led design of unified configuration abstraction over legacy, inconsistent NE interfaces"
+        - "Hardened legacy PGW/SGW codebase (1M+ LOC), reducing segfaults by 15\\%"
+        - "Tech lead for NE configuration service (gNMI/REST); designed DSL mapping SNMP variables to YANG models, cutting new node-variant onboarding from a week to under a day across 20+ variants"
+        - "Mentored 3 engineers on NE configuration service design and delivery"
         - "Stack: 3GPP, Docker, Grafana, Prometheus, SNMP, gNMI, REST, Conan"
 
     - title: "Teaching Assistant"
@@ -48,7 +49,7 @@ sections:
       hint:
         - "Sep 2024 -- Jun 2025"
       description:
-        - "Graded assignments and held office hours for Go and C++ courses across 320 students"
+        - "Authored assignments, graded work, and held office hours for Go and C++ courses across 320 students"
 
     - title: "Software Engineer"
       brief:
@@ -59,7 +60,7 @@ sections:
         - "Jan 2024 -- Nov 2024"
       description:
         - "Built CI/CD release pipelines for 50+ services"
-        - "Recovered 6 months of lost commit-to-prod metrics -- primary devexp KPI"
+        - "Restored 6 months of missing lead-time data (primary devexp KPI)"
         - "Pioneered Go adoption in a Python-only CI team -- unblocked team-wide shift to faster, modern stack"
         - "Stack: Go, Python, SQL, CI/CD"
 
@@ -71,13 +72,13 @@ sections:
       hint:
         - "Jun 2023 -- Jan 2024"
       description:
-        - "Implemented dynamic sharding in Yandex search indexer, cutting index update time by 60–80\\%; enabled adoption in highest-traffic systems"
+        - "Implemented dynamic sharding in Yandex search indexer, cutting index update time by 60--80\\%; enabled adoption in highest-traffic systems"
         - "Stack: C++, Python, Protobuf"
 
   - education:
     - title: "Moscow Institute of Physics and Technology (MIPT)"
       brief:
-        - "Master's Degree, Computer Science"
+        - "Master's Degree, Computer Science (in progress)"
         - "Moscow, Russia"
       hint:
         - "Sep 2025 -- Aug 2027"
@@ -92,14 +93,17 @@ sections:
   - projects:
     - title: "Tiramisu"
       description: >-
-        TUI tool for tmux session management with fuzzy search and glob-pattern project discovery.
-        Written in Rust. Available on Homebrew.
-      url: "https://github.com/AlekseySav/tiramisu"
+        Built TUI for tmux session management -- fuzzy search, glob-pattern project discovery.
+        Rust; distributed via Homebrew.
+      url:
+        Tiramisu: "https://github.com/AlekseySav/tiramisu"
+        distributed via Homebrew: "https://github.com/AlekseySav/homebrew-tiramisu"
 
     - title: "Ras"
       description: >-
-        x86 assembler written from scratch in C++.
-        4x faster than NASM; produces more optimal machine code than FASM/GAS via custom instruction encoding optimizer.
-        Output validated against NASM via automated test suite.
-        Used to build a custom x86 OS kernel.
-      url: "https://github.com/AlekseySav/ras"
+        Designed x86 assembler in C++ outperforming NASM by 4x, producing more optimal machine code
+        than FASM/GAS via custom instruction-encoding optimizer; validated against NASM with
+        automated test suite, used to bootstrap custom OS kernel.
+      url:
+        Ras: "https://github.com/AlekseySav/ras"
+        custom OS kernel: "https://github.com/AlekseySav/mu/tree/v2"
