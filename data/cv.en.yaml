@@ -72,7 +72,7 @@ sections:
       hint:
         - "Jun 2023 -- Jan 2024"
       description:
-        - "Implemented dynamic sharding in Yandex search indexer, cutting index update time by 60--80\\%; enabled adoption in highest-traffic systems"
+        - "Implemented dynamic sharding in Yandex search indexer, cutting snapshot build time by up to 70\\% (50s to 15s on an 11M-key); enabled adoption in highest-traffic systems"
         - "Stack: C++, Python, Protobuf"
 
   - education:
